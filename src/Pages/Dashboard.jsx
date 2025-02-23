@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import Header from "../Component/Header";
 import RealTimeVisualizer from "../Component/RealTimeVisualizer";
 import Metrics from "../Component/Metrics";
-import Prediction from "../Component/Prediction";
 import { useAppState } from "../GlobalContext/AppContext";
 import axios from "axios";
 
@@ -10,32 +9,32 @@ function Dashboard() {
   
   const VisualizerData = [
     {
-      title: "Blood SpO2 Levels :",
-      data: useAppState().bloodSpo2,
+      title: "Temperature :",
+      data: useAppState().temperature,
     },
     {
-      title: "Bio-Impedence Levels :",
-      data: useAppState().bioImpendence,
+      title: "Acceleration X axis :",
+      data: useAppState().accelerationX,
     },
     {
-      title: "Pulse Rate :",
-      data: useAppState().pulseRate,
+      title: "Acceleration Y axis :",
+      data: useAppState().accelerationY,
     },
     {
-      title: "Body Temperature :",
-      data: useAppState().bodyTemperature,
+      title: "Acceleration Z axis :",
+      data: useAppState().accelerationZ,
     },
   ];
 
   const {
-    bloodSpo2,
-    bioImpendence,
-    pulseRate,
-    bodyTemperature,
-    setSpo2,
-    setBioImpendence,
-    setPulseRate,
-    setBodyTemp,
+    temperature,
+    accelerationX,
+    accelerationY,
+    accelerationZ,
+    setTemperature,
+    setAccelerationX,
+    setAccelerationY,
+    setAccelerationZ,
     DATA_URL,
   } = useAppState();
 
@@ -46,7 +45,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchData();
-  }, [bloodSpo2, bioImpendence, pulseRate, bodyTemperature]);
+  }, [temperature, accelerationX, accelerationY, accelerationZ]);
 
   return (
     <div className="dashboard">
@@ -97,7 +96,7 @@ function Dashboard() {
 
       <div className="metrics-prediction">
         <Metrics />
-        <Prediction />
+        
       </div>
     </div>
   );
