@@ -1,0 +1,188 @@
+:root {
+  --primary-color: #4caf50; /* Green - Fresh Highlight */
+  --secondary-color: #ff9800; /* Orange - Vibrant Contrast */
+  --highlight-color: #ffeb3b; /* Yellow - Strong Highlight */
+  --text-color: #ffffff; /* White for High Contrast */
+  --background-color: #212121; /* Deep Gray Background */
+  --header-bg-color: #333333; /* Darker Gray Header */
+  --header-text-color: #ffeb3b; /* Yellow */
+  --card-bg-color: #424242; /* Medium Gray Card Background */
+  --card-border-color: #4caf50; /* Green Border */
+  --chart-bg-color: #263238; /* Dark Blue-Gray for Charts */
+  --circular-graph-color: #ff9800; /* Orange Circular Graph */
+  --transition-duration: 0.4s; /* Smooth Transitions */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  animation: fadeIn 1s ease;
+}
+
+.dashboard {
+  padding: 20px;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+}
+
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--highlight-color);
+  text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--secondary-color);
+  margin: 0;
+  letter-spacing: 3px;
+  animation: pulse 2s infinite;
+}
+
+.gaps {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.metrics {
+  background-color: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 20px;
+  border: 3px solid var(--card-border-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  transition: all var(--transition-duration);
+  position: relative;
+}
+
+.metrics:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(76, 175, 80, 0.7);
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 12px;
+  background: rgba(76, 175, 80, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.metric-item:last-child {
+  margin-bottom: 0;
+}
+
+.metric-item:hover {
+  background: rgba(76, 175, 80, 0.5);
+  transform: translateX(10px);
+}
+
+.metric-icon {
+  color: var(--highlight-color);
+  font-size: 2rem;
+}
+
+.metric-label {
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.metric-value {
+  color: var(--text-color);
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.8rem;
+  }
+
+  .gaps {
+    gap: 2rem;
+  }
+
+  .metrics {
+    padding: 25px;
+  }
+
+  .metric-item {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .metric-label {
+    font-size: 1.1rem;
+  }
+
+  .metric-value {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .gaps {
+    gap: 1.5rem;
+  }
+
+  .metrics {
+    padding: 20px;
+  }
+
+  .metric-item {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .metric-label {
+    font-size: 1rem;
+  }
+
+  .metric-value {
+    font-size: 1.1rem;
+  }
+}
