@@ -3,16 +3,16 @@ import React, { createContext, useContext, useState } from "react";
 const AppContext = createContext();
 
 const AppFieldsProvider = ({ children }) => {
-  const [bloodSpo2, setSpo2] = useState([
+  const [temperature, setTemperature] = useState([
     10, 20, 30, 20, 100, 10, 20, 30, 40, 60, 77, 80, 90,
   ]);
-  const [bioImpendence, setBioImpedence] = useState([
+  const [accelerationX, setAccelerationX] = useState([
     10, 20, 30, 20, 100, 10, 20, 30, 40, 60, 77, 80, 90,
   ]);
-  const [pulseRate, setPulseRate] = useState([
+  const [accelerationY, setAccelerationY] = useState([
     10, 20, 30, 20, 100, 10, 20, 30, 40, 60, 77, 80, 90,
   ]);
-  const [bodyTemperature, setBodyTemp] = useState([
+  const [accelerationZ, setAccelerationZ] = useState([
     10, 20, 30, 20, 100, 10, 20, 30, 40, 60, 77, 80, 90,
   ]);
 
@@ -21,14 +21,14 @@ const AppFieldsProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        bloodSpo2,
-        setSpo2,
-        bioImpendence,
-        setBioImpedence,
-        pulseRate,
-        setPulseRate,
-        bodyTemperature,
-        setBodyTemp,
+        temperature,
+        setTemperature,
+        accelerationX,
+        setAccelerationX,
+        accelerationY,
+        setAccelerationY,
+        accelerationZ,
+        setAccelerationZ,
         DATA_URL,
       }}
     >
