@@ -12,17 +12,17 @@ export default function Metrics() {
       <div className="metric-item">
         <FaTint className="metric-icon" />
         <span className="metric-label">normal acceleraction x-axis:</span>
-        <span className="metric-value">98% Oxygen Adsorption</span>
+        <span className="metric-value">20.00343218</span>
       </div>
       <div className="metric-item">
         <FaHeartbeat className="metric-icon" />
         <span className="metric-label">normal acceleraction y-axis:</span>
-        <span className="metric-value">78 beats/minute</span>
+        <span className="metric-value">30.515367</span>
       </div>
       <div className="metric-item">
         <FaThermometerHalf className="metric-icon" />
         <span className="metric-label">normal acceleraction z-axis:</span>
-        <span className="metric-value">98°F</span>
+        <span className="metric-value">25.36313387301</span>
       </div>
     </div>
   );
